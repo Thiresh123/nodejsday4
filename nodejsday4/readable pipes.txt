@@ -1,0 +1,27 @@
+Node.js Stream readable.pipe() Method
+
+The readable.pipe() method in a Readable Stream is used to attach a Writable stream to the readable stream so that it consequently switches into flowing mode and then pushes all the data that it has to the attached Writable. 
+
+Syntax: readable.pipe( destination, options )
+
+Parameters: This method accept two parameters as mentioned above and described below:
+
+destination:   This parameter holds the destination of writing data.
+options:       This parameter holds the pipe options.
+Return Value:  It returns the stream.Writable destination, 
+               allowing for a chain of pipes if it is a Duplex or a Transform stream. 
+
+Example:
+var fs = require("fs");
+ 
+// Create a readable stream
+var readable = fs.createReadStream('input.txt');
+ 
+// Create a writable stream
+var writable = fs.createWriteStream('output.txt');
+ 
+// Calling pipe method
+readable.pipe(writable);
+ 
+console.log("Program Ended");
+
