@@ -1,0 +1,49 @@
+Stream and Event Emitters
+EventEmitter is a class that helps us to create a publisher-subscriber pattern in NodeJS. Using the event emitter, 
+we can simply raise a new event from a different part of an application, and a listener will listen to the raised event and have some action performed for the event.
+
+
+Let’s consider an example for Event Emitters:
+
+var emitter = require('events').EventEmitter; 
+var em = new emitter(); 
+//Subscribe FirstEvent 
+em.addListener('FirstEvent', function (data) 
+{
+ console.log('First subscriber: ' + data); 
+});
+ //Subscribe SecondEvent 
+em.on('SecondEvent', function (data) 
+{ console.log('First subscriber: ' + data); 
+}); 
+// Raising FirstEvent 
+em.emit('FirstEvent', 'This is my first Node.js event emitter example.');
+ // Raising SecondEvent 
+em.emit('SecondEvent', 'This is my second Node.js event emitter example.');
+
+
+
+
+var events = require('events');
+var util=require('util');
+
+var Person=function (name) {
+     this.name=name;
+};
+util.inherits(Person, events.EventEmitter)
+
+var ABC=new Person('ABC');
+var XYZ=new Person('XYZ');
+var MNO=new Person('MNO');
+var people=[ABC,XYZ,MNO];
+
+people.forEach(function(person)
+{
+    person.on('speak',function(mssg)
+    {
+        console.log(person.name +' said ' +mssg)
+    });
+});
+ABC.emit('speak','hello');
+XYZ.emit('speak','hi');
+MNO.emit('speak','hey');

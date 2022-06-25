@@ -1,0 +1,18 @@
+Flowing and Non-Flowing Streams
+There are two types of readable streams:
+
+Flowing stream — A stream that keeps on passing the data that can be directly listened to by using the data event on the stream.
+Non-flowing stream — A stream that does not push data automatically. Instead, the stream stores the data in the buffer and we need to explicitly call the read() method of the stream to read it.
+The above code was an example of a flowing stream as we were just listening to the data event of the stream and the listener gets triggered automatically every time some new data comes up from the stream.
+
+The following is a simple example of a non-flowing stream:
+
+import { createReadStream, ReadStream } from 'fs';
+
+var readStream: ReadStream = createReadStream('./data.txt');
+
+setTimeout(() => {
+  const data = readStream.read(10);
+  console.log(data);
+}, 10);
+
