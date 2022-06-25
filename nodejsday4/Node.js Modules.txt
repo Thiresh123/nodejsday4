@@ -1,0 +1,35 @@
+Node.js Modules
+	Modules are the blocks of encapsulated code that communicates with an external application on the basis of their related functionality. Modules can be a single file or a collection of multiples files/folders. The reason programmers are heavily reliant on modules is because of their re-usability as well as the ability to break down a complex piece of code into manageable chunks.
+
+Modules are of three types:
+•	Core Modules
+•	local Modules
+•	Third-party Modules
+
+  
+                                             Core Modules 	
+http               ->	creates an HTTP server in Node.js.
+Assert           ->	set of assertion functions useful for testing.
+Fs                 ->	used to handle file system.
+Path             ->	includes methods to deal with file paths.
+Process       ->	provides information and control about the current Node.js process.
+Os              ->	provides information about the operating system.
+Querystring ->	utility used for parsing and formatting URL query strings.
+url               ->	module provides utilities for URL resolution and parsing
+
+
+Local Modules: Unlike built-in and external modules, local modules are created locally in your Node.js application. Let’s create a simple calculating module that calculates various operations. 
+
+Third-party modules: Third-party modules are modules that are available online using the Node Package Manager(NPM). These modules can be installed in the project folder or globally. Some of the popular third-party modules are mongoose, express, angular, and react.
+
+Node.js Global Objects
+       Node.js is an open-source project that can be used for server-side scripting. Node.js Global Objects are the objects that are available in all modules. Global Objects are built-in objects that are part of the JavaScript and can be used directly in the application without importing any particular module. The Node.js Global Objects are listed below: 
+ 
+1.Class: Buffer 
+        The Buffer class is an inbuilt globally accessible class that means it can be used without importing any module. The Buffer class is used to deal with binary data. Buffer class objects are used to represent binary data as a sequence of bytes. 
+
+console: It is an inbuilt global object used to print to stdout and stderr. 
+process: It is an inbuilt global object that is an instance of EventEmitter used to get information on current process. It can also be accessed using require() explicitly. 
+global: It is a global namespace. Defining a variable within this namespace makes it globally accessible
+
+
