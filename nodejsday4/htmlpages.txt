@@ -1,0 +1,9 @@
+How to provide path to html file in sendFile() ?
+
+We import the path core module of node.js.
+
+const path = require(‘path’);
+
+path has a join function . __dirname is a global variable which holds the actual path to project main folder.
+
+path.join(__dirname, ‘views’, ‘add-user.html’); This will refer to the actual file location of add-user html code.
