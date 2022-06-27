@@ -1,0 +1,38 @@
+What is Routing?
+Routing defines the way in which the client requests are handled by the application endpoints.
+
+Implementation of routing in Node.js: There are two ways to implement routing in node.js which are listed below:
+
+By Using Framework
+Without using Framework
+
+Using Framework: 
+
+1.Node has many frameworks to help you to get your server up and running. The most popular is Express.js.
+
+2.Routing with Express in Node: Express.js has an “app” object corresponding to HTTP. 
+We define the routes by using the methods of this “app” object. This app object specifies a callback function, which is called when a request is received. 
+We have different methods in app object for a different type of request.
+
+For GET request use app.get() method:
+var express = require('express')
+var app = express()
+
+app.get('/', function(req, res) {
+    res.send('Hello Sir')
+})
+For POST request use app.post() method:
+var express = require('express')
+var app = express()
+
+app.post('/', function(req, res) {
+    res.send('Hello Sir')
+})
+For handling all HTTP methods (i.e. GET, POST, PUT, DELETE etc.) use app.all() method:
+var express = require('express')
+var app = express()
+
+app.all('/', function(req, res) {
+    console.log('Hello Sir')
+    next()   // Pass the control to the next handler
+})
